@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-memory-leaks-exercises",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "build": "tsc ./app.ts --outDir ./out/",
+    "start": "node ./out/app.js",
+    "dev": "tsx watch app.ts",
+    "nleak": "nleak run --config ./config.js --guest-app-entry ./out/app.js --out ./nleak/",
+    "clinic": "clinic heapprofiler -- node app.js",
+    "stress": "tsx stress.ts --requests 100"
+  },
+  "author": "Maciej Szwarc",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "cli-progress": "^3.12.0",
+    "fastify": "^4.25.1",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "clinic": "^13.0.0",
+    "nleak": "^0.1.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}
